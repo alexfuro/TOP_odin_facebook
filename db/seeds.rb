@@ -26,5 +26,5 @@ dave.sent_requests.create(requested_id: julia.id)
 dave.sent_requests.create(requested_id: bama.id, accepted: true)
 
 julia.sent_requests.create(requested_id: joe.id)
-julia.sent_requests.create(requested_id: dave.id, accepted: true)
+julia.sent_requests.create(requested_id: dave.id, accepted: false)
 julia.sent_requests.create(requested_id: maria.id, accepted: true)
