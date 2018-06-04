@@ -1,0 +1,11 @@
+<%= link_to "Odin-book", root_path, id: :home_url %>
+
+<nav>
+  <% if user_signed_in? %>
+  <%= link_to "My profile", user_path(current_user) %>
+  <%= link_to "friend request",'#' %>
+    <%= link_to "Sign Out", destroy_user_session_path,  method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+  <% end %>
+</nav>
