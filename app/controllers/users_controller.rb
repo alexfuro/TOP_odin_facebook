@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
+    @are_friends =  friends?(current_user, @user)
+    @request =  get_request_id(current_user, @user)
   end
   def edit
     @user = User.find(params[:id])
@@ -41,5 +43,21 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name)
+    end
+
+    def friends?(current_user, user)
+      if current_user.friends.pluck(:requestor_id).include?(user.id)
+        return true
+      elsif current_user.friends.pluck(:requested_id).include?(user.id)
+        return true
+      else
+        return false
+      end
+    end
+
+    def get_request_id(current_user, user)
+      request_id = FriendRequest.find_by(requestor_id: current_user.id, requested_id: user.id)
+      return request_id unless request_id.nil?
+      return FriendRequest.find_by(requestor_id: user.id, requested_id: current_user.id)
     end
 end

@@ -1,0 +1,5 @@
+<%= form_for(current_user.sent_requests.build(requested_id: @user.id)) do |f| %>
+  <%= f.hidden_field :requestor_id %>
+  <%= f.hidden_field :requested_id %>
+  <%= f.submit "Send request" %>
+<% end %>

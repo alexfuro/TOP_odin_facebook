@@ -1,0 +1,10 @@
+<% @requests.each do |request| %>
+  <%= form_for(request, url: friend_request_path(request.id)) do |f| %>
+    <span><%= User.find(request.requestor_id).name %></span>
+
+    <%= f.label :accept %>
+    <%= f.check_box :accepted %>
+
+    <%= f.submit "Save" %>
+  <% end %>
+<% end %>

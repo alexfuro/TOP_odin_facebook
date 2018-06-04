@@ -2,8 +2,10 @@
 
 <nav>
   <% if user_signed_in? %>
+  <%= link_to "Users", users_path %>
   <%= link_to "My profile", user_path(current_user) %>
-  <%= link_to "friend request",'#' %>
+  <%= link_to pluralize(current_user.received_requests.pending.count, "Friend Request"),
+                        friend_requests_path %>
     <%= link_to "Sign Out", destroy_user_session_path,  method: :delete %>
   <% else %>
     <%= link_to "Sign In", new_user_session_path %>
