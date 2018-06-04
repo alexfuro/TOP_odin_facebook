@@ -1,10 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-joe = User.create!(name: "joe", email: "joe@email.com",
+# Create some basic users
+joe   =  User.create!(name: "joe", email: "joe@email.com",
                       password: "password", password_confirmation: "password")
+
+maria =  User.create!(name: "maria", email: "maria@email.com",
+                      password: "password", password_confirmation: "password")
+
+dave  =  User.create!(name: "dave", email: "dave@email.com",
+                      password: "password", password_confirmation: "password")
+
+julia =  User.create!(name: "julia", email: "julia@email.com",
+                      password: "password", password_confirmation: "password")
+
+bama  =  User.create!(name: "bama", email: "bama@email.com",
+                      password: "password", password_confirmation: "password")
+
+loner =  User.create!(name: "loner", email: "loner@email.com",
+                      password: "password", password_confirmation: "password")
+
+# Create some friend requests
+joe.sent_requests.create(requested_id: maria.id)
+joe.sent_requests.create(requested_id: dave.id, accepted: true)
+joe.sent_requests.create(requested_id: bama.id, accepted: false)
+
+dave.sent_requests.create(requested_id: julia.id)
+dave.sent_requests.create(requested_id: bama.id, accepted: true)
+
+julia.sent_requests.create(requested_id: joe.id)
+julia.sent_requests.create(requested_id: dave.id, accepted: true)
+julia.sent_requests.create(requested_id: maria.id, accepted: true)
