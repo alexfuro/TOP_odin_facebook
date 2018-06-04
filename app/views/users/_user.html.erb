@@ -1,0 +1,8 @@
+<li>
+  <div class="user_card">
+    <%= link_to user.name, user_path(user) %>
+    <%= link_to "Edit", edit_user_path(user) %>
+    <%= link_to "delete", user, method: :delete,
+                                            data: { confirm: "Are you sure?"} %>
+  </div>
+</li>
