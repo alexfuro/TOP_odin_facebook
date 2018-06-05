@@ -46,18 +46,11 @@ class UsersController < ApplicationController
     end
 
     def friends?(current_user, user)
-      if current_user.friends.pluck(:requestor_id).include?(user.id)
-        return true
-      elsif current_user.friends.pluck(:requested_id).include?(user.id)
-        return true
-      else
-        return false
-      end
+      request = current_user.friends.where(requested_id: user.id)
+      request.empty? ? false : true
     end
 
     def get_request_id(current_user, user)
-      request_id = FriendRequest.find_by(requestor_id: current_user.id, requested_id: user.id)
-      return request_id unless request_id.nil?
-      return FriendRequest.find_by(requestor_id: user.id, requested_id: current_user.id)
+      FriendRequest.find_by(requestor_id: current_user.id, requested_id: user.id)
     end
 end

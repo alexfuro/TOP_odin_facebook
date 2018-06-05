@@ -25,9 +25,11 @@ class UserFriendRequestTest < ActionDispatch::IntegrationTest
     request = FriendRequest.last.id
 
     post user_session_path params: { user: { email: @user.email, password: "password" }}
-    assert_difference '@user.friends.count', 1 do
-      patch friend_request_path(request), params: {
-                                                friend_request: { accepted: 1 }}
+    assert_difference 'FriendRequest.all.count',1 do
+      assert_difference '@user.friends.count', 1 do
+        patch friend_request_path(request), params: {
+                                                  friend_request: { accepted: 1 }}
+      end
     end
     assert_not_empty @other.friends
     assert_empty     @user.received_requests.pending
