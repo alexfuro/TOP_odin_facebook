@@ -31,9 +31,10 @@ class FriendRequestsController < ApplicationController
     requestor = FriendRequest.find(params[:id]).requestor_id
     requested = FriendRequest.find(params[:id]).requested_id
 
-    if FriendRequest.find(params[:id]).destroy
+    if FriendRequest.find(params[:id]).accepted
       reciprocate_destroy(requestor, requested)
     end
+    FriendRequest.find(params[:id]).destroy
     redirect_to request.referrer || users_path
   end
 
