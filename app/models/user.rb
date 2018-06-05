@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :received_requests, class_name: :FriendRequest, foreign_key: :requested_id
   has_many :posts
   has_many :likes
+  has_many :comments
 
   def friends
     FriendRequest.friendships(self)
