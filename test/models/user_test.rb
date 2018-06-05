@@ -13,6 +13,8 @@ class UserTest < ActiveSupport::TestCase
                       password: "password", password_confirmation: "password")
     @other.sent_requests.create(requested_id: @another.id)
     @other.sent_requests.create(requested_id: @third.id, accepted: true)
+
+    @other.posts.create(content: "yo whats up!")
   end
 
   test 'does not allow blank name' do
@@ -53,5 +55,9 @@ class UserTest < ActiveSupport::TestCase
   test 'can distinguis an answered friend requests' do
     assert_empty     @third.received_requests.pending
     assert_not_empty @third.received_requests
+  end
+
+  test 'a user has posts' do
+    assert_not_empty @other.posts
   end
 end
