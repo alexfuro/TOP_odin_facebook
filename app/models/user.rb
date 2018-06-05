@@ -13,4 +13,10 @@ class User < ApplicationRecord
   def friends
     FriendRequest.friendships(self)
   end
+  def feed
+    friend_ids = "SELECT requested_id FROM friend_requests
+                  WHERE  requestor_id = :user_id and accepted = true"
+    Post.where("user_id IN (#{friend_ids})
+               OR user_id = :user_id", user_id: id)
+  end
 end
