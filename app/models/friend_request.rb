@@ -5,6 +5,6 @@ class FriendRequest < ApplicationRecord
   scope      :pending,  -> { where(accepted: nil) }
 
   def FriendRequest.friendships(user)
-    where(requestor_id: user.id).or(where(requested_id: user.id)).accepted
+    where(requestor_id: user.id).accepted
   end
 end
