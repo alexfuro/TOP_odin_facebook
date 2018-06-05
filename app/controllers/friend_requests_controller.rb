@@ -19,14 +19,15 @@ class FriendRequestsController < ApplicationController
   def update
     request = FriendRequest.find(params[:id])
     if request.update(request_params)
-      reciprocate(params[:id])
-      flash[:success] = "You have a new friend!"
+      reciprocate(params[:id]) if params[:friend_request][:accepted] == "1"
+      flash[:success] = "We have recorded your answer"
       redirect_to friend_requests_path
     else
       flash.now[:success] = "Error"
       render friend_requests_path
     end
   end
+  
   def destroy
     requestor = FriendRequest.find(params[:id]).requestor_id
     requested = FriendRequest.find(params[:id]).requested_id
@@ -45,9 +46,11 @@ class FriendRequestsController < ApplicationController
     def reciprocate(request_id)
       requestor = FriendRequest.find(request_id).requestor_id
       requested = FriendRequest.find(request_id).requested_id
+      #flip requested and requestor to create other side of fiendship
       FriendRequest.create(requestor_id: requested, requested_id: requestor, accepted: true)
     end
     def reciprocate_destroy(requestor, requested)
+      #flip requested and requestor to erase other side of fiendship
       FriendRequest.find_by(requestor_id: requested, requested_id: requestor, accepted: true).destroy
     end
 end

@@ -20,7 +20,7 @@ loner =  User.create!(name: "loner", email: "loner@email.com",
 # Create some friend requests
 joe.sent_requests.create(requested_id: maria.id)
 joe.sent_requests.create(requested_id: dave.id, accepted: true)
-joe.sent_requests.create(requested_id: bama.id, accepted: false)
+joe.sent_requests.create(requested_id: bama.id)
 
 dave.sent_requests.create(requested_id: julia.id)
 dave.sent_requests.create(requested_id: bama.id, accepted: true)
