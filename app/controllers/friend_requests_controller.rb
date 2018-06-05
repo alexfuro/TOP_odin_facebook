@@ -6,7 +6,7 @@ class FriendRequestsController < ApplicationController
   end
 
   def create
-    current_user.sent_requests.build(requested_id: params[:friend_request][:requested_id])
+    current_user.sent_requests.build(request_params)
     if current_user.save!
       flash[:success] = "friend request sent!"
       redirect_to user_path(params[:friend_request][:requested_id])
@@ -27,7 +27,7 @@ class FriendRequestsController < ApplicationController
       render friend_requests_path
     end
   end
-  
+
   def destroy
     requestor = FriendRequest.find(params[:id]).requestor_id
     requested = FriendRequest.find(params[:id]).requested_id
@@ -41,7 +41,7 @@ class FriendRequestsController < ApplicationController
 
   private
     def request_params
-      params.require(:friend_request).permit(:accepted)
+      params.require(:friend_request).permit(:requested_id,:accepted)
     end
     def reciprocate(request_id)
       requestor = FriendRequest.find(request_id).requestor_id
