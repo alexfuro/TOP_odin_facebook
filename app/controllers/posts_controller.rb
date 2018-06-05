@@ -5,9 +5,6 @@ class PostsController < ApplicationController
     @posts = current_user.feed
   end
 
-  def new
-  end
-
   def create
     if current_user.posts.create(post_params)
       flash[:success] = "Post created successful"

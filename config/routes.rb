@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources  :users
   resources  :friend_requests, only: [:index, :create, :update, :destroy]
-  resources  :posts,           only: [:index, :new,    :create]
+  resources  :posts,           only: [:index, :create]
   resources  :likes,           only: [:create, :destroy]
   resources  :comments,        only: [:create]
   root 'static_pages#index'
