@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :comments
 
   def friends
-    FriendRequest.friendships(self)
+    User.where(id: FriendRequest.friendships(self).pluck(:requested_id))
   end
   def feed
     friend_ids = "SELECT requested_id FROM friend_requests

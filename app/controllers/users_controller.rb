@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     end
 
     def friends?(current_user, user)
-      request = current_user.friends.where(requested_id: user.id)
+      request = current_user.friends.where(id: user.id)
       request.empty? ? false : true
     end
 
