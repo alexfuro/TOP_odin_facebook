@@ -20,7 +20,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test 'displays pages after login' do
     post user_session_path params: { user: { email: @user.email, password: "password" } }
-    assert_redirected_to root_path
+    assert_redirected_to posts_path
 
     get users_path
     assert_response :success

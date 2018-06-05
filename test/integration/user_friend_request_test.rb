@@ -11,7 +11,7 @@ class UserFriendRequestTest < ActionDispatch::IntegrationTest
 
   test 'user can send a friend request' do
     post user_session_path params: { user: { email: @user.email, password: "password" }}
-    assert_redirected_to root_path
+    assert_redirected_to posts_path
     assert_difference '@user.sent_requests.pending.count', 1 do
       post friend_requests_path params: { friend_request: { resquestor_id: @user.id,
                                            requested_id: @other.id } }

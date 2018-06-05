@@ -1,0 +1,6 @@
+<%= form_for(current_user.posts.build) do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.submit "Create Post" %>
+<% end %>

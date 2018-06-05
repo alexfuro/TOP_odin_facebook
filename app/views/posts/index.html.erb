@@ -1,0 +1,7 @@
+<h1><%= current_user.name.capitalize %>'s Feed</h1>
+
+<%= render 'form_post' %>
+<br>
+<div class="feed">
+  <%= render @posts %>
+</div>
