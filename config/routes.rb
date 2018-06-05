@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources  :users
   resources  :friend_requests, only: [:index, :create, :update, :destroy]
   resources  :posts,           only: [:index, :new,    :create]
+  resources  :likes,           only: [:create, :destroy]
   root 'static_pages#index'
 end
