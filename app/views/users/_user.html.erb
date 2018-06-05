@@ -4,7 +4,7 @@
     <%  if current_user == user %>
       <%= link_to "Edit", edit_user_path(user) %>
       <%= link_to "delete", user, method: :delete,
-                                              data: { confirm: "Are you sure?"} %>
+                                              data: { confirm: "Delete account?"} %>
     <% end %>
   </div>
 </li>

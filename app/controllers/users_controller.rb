@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new]
+
   def index
     @users = User.all
   end
+
   def new
     @user = User.new
   end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -16,14 +19,17 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
   def show
     @user = User.find(params[:id])
     @are_friends =  friends?(current_user, @user)
-    @request =  get_request_id(current_user, @user)
+    @request =  get_friend_request(current_user, @user)
   end
+
   def edit
     @user = User.find(params[:id])
   end
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
@@ -34,10 +40,11 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "Sorry to see you go."
-    redirect_to users_path
+    redirect_to root_path
   end
 
   private
@@ -50,7 +57,7 @@ class UsersController < ApplicationController
       request.empty? ? false : true
     end
 
-    def get_request_id(current_user, user)
+    def get_friend_request(current_user, user)
       FriendRequest.find_by(requestor_id: current_user.id, requested_id: user.id)
     end
 end
