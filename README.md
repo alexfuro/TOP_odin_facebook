@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a ruby on rails application done as part of the Ruby on Rails course of The Odin Project.
+The assignment consist of recreating the basic functionality of Facebook. More information can be found at [Ruby on Rails final project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project?ref=lnav)
