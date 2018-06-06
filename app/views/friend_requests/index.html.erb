@@ -1,9 +1,14 @@
 <% @requests.each do |request| %>
   <%= form_for(request) do |f| %>
-    <span><%= User.find(request.requestor_id).name %></span>
+    <span><%= User.find(request.requestor_id).name %>:  </span>
+
+    <%= f.label :deny %>
+    <%= f.radio_button :accepted, "deny" %>
 
     <%= f.label :accept %>
-    <%= f.check_box :accepted %>
+    <%= f.radio_button :accepted, "accept" %>
+
+    <% # f.check_box :accepted %>
 
     <%= f.submit "Save" %>
   <% end %>

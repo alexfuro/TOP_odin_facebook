@@ -19,7 +19,7 @@ class FriendRequestsController < ApplicationController
   def update
     request = FriendRequest.find(params[:id])
     if request.update(request_params)
-      reciprocate(params[:id]) if params[:friend_request][:accepted] == "1"
+      reciprocate(params[:id]) if params[:friend_request][:accepted] == "accept"
       flash[:success] = "We have recorded your answer"
       redirect_to friend_requests_path
     else
