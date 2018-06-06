@@ -14,8 +14,8 @@ class PostsController < ApplicationController
       flash[:success] = "Post created successful"
       redirect_to posts_path
     else
-      flash.now[:danger] = "Oh no"
-      redender :new
+      flash[:danger] = "Oh no"
+      redirect_to posts_path
     end
   end
 
