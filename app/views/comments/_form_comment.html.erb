@@ -1,5 +1,5 @@
-<%= form_for(current_user.comments.build(post_id: post.id)) %>
-  <%= t.text_area :content %>
-
+<%= form_for(@comment) do |f|%>
+  <%= f.text_area :content %><br>
+  <%= f.hidden_field :post_id, value: object.id %>
   <%= f.submit "Comment" %>
 <% end %>

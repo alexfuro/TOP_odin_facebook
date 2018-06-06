@@ -2,9 +2,10 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = current_user.feed
-    @post  = current_user.posts.build
-    @like  = current_user.likes.build
+    @posts   = current_user.feed
+    @post    = current_user.posts.build
+    @like    = current_user.likes.build
+    @comment = current_user.comments.build
   end
 
   def create

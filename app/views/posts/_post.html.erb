@@ -8,16 +8,11 @@
   <%= render 'likes/form_likes', object: post %>
 <% end %>
 
-<%= form_for(current_user.comments.build(post_id: post.id)) do |f|%>
-  <%= f.text_area :content %><br>
-  <%= f.hidden_field :post_id %>
-  <%= f.submit "Comment" %>
-<% end %>
+<%= render 'comments/form_comment', object: post %>
 <br>
 
 <p>Comments</p>
 <% post.comments.each do |comment| %>
-  <p>Commenter: <%= comment.user.name %>
-  <p><%= comment.content %></p>
+  <%= render 'comments/comment', object: comment %>
 <% end %>
 <br>

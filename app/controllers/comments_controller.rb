@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
-    if current_user.comments.create(comment_params)
+    @comment = current_user.comments.create(comment_params)
+    if @comment.save
       flash[:success] = "Comment created!"
       redirect_to posts_path
     else
