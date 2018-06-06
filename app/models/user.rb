@@ -6,11 +6,13 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  has_many :sent_requests,     class_name: :FriendRequest, foreign_key: :requestor_id
-  has_many :received_requests, class_name: :FriendRequest, foreign_key: :requested_id
-  has_many :posts
-  has_many :likes
-  has_many :comments
+  has_many :sent_requests,     class_name: :FriendRequest,
+                               foreign_key: :requestor_id, dependent: :destroy
+  has_many :received_requests, class_name: :FriendRequest,
+                               foreign_key: :requested_id, dependent: :destroy
+  has_many :posts            , dependent: :destroy
+  has_many :likes            , dependent: :destroy
+  has_many :comments         , dependent: :destroy
 
   def friends
     User.where(id: FriendRequest.friendships(self).pluck(:requested_id))
