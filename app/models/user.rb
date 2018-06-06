@@ -16,6 +16,18 @@ class User < ApplicationRecord
     User.where(id: FriendRequest.friendships(self).pluck(:requested_id))
   end
 
+  def request_pending?(user)
+    !self.received_requests.pending.find_by(requestor_id: user.id).nil?
+  end
+
+  def sent_request?(user)
+    !self.sent_requests.find_by(requested_id: user.id).nil?
+  end
+
+  def get_friend_request(user)
+    FriendRequest.find_by(requestor_id: id, requested_id: user.id)
+  end
+
   def feed
     friend_ids = "SELECT requested_id FROM friend_requests
                   WHERE  requestor_id = :user_id and accepted = true"

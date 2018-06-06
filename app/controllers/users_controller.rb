@@ -21,9 +21,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user        =  User.find(params[:id])
     @are_friends =  friends?(current_user, @user)
-    @request =  get_friend_request(current_user, @user)
+    if current_user.sent_request?(@user)
+      @request = current_user.get_friend_request(@user)
+    else
+      @request     =  current_user.sent_requests.build
+    end
   end
 
   def edit
@@ -55,9 +59,5 @@ class UsersController < ApplicationController
     def friends?(current_user, user)
       request = current_user.friends.where(id: user.id)
       request.empty? ? false : true
-    end
-
-    def get_friend_request(current_user, user)
-      FriendRequest.find_by(requestor_id: current_user.id, requested_id: user.id)
     end
 end

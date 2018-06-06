@@ -2,9 +2,9 @@
 
 <% if current_user != @user %>
   <% if !@are_friends %>
-    <% if current_user.received_requests.pending.find_by(requestor_id: @user.id) %>
+    <% if current_user.request_pending?(@user) %>
       <%= link_to "Request Pending", friend_requests_path %>
-    <% elsif current_user.sent_requests.find_by(requested_id: @user.id) %>
+    <% elsif current_user.sent_request?(@user) %>
       <% provide(:btn_title, "Delete Request") %>
       <%= render 'friend_requests/form_delete_request' %>
     <% else %>
