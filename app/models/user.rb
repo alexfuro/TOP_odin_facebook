@@ -15,10 +15,19 @@ class User < ApplicationRecord
   def friends
     User.where(id: FriendRequest.friendships(self).pluck(:requested_id))
   end
+
   def feed
     friend_ids = "SELECT requested_id FROM friend_requests
                   WHERE  requestor_id = :user_id and accepted = true"
     Post.where("user_id IN (#{friend_ids})
                OR user_id = :user_id", user_id: id)
+  end
+
+  def liked?(post)
+    Like.find_by(user_id: id, post_id: post.id).nil?
+  end
+
+  def like(post)
+    Like.find_by(user_id: id, post_id: post.id)
   end
 end

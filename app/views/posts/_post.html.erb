@@ -2,17 +2,10 @@
 <p><%= post.content %></p>
 <p><%= pluralize(post.likes.count, "Like") %></p>
 
-<% if  current_user.likes.pluck(:post_id).include?(post.id) %>
-  <% like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
-  <%= form_for(like, url: like_path(like.id), method: :delete) do |f| %>
-    <%= f.submit "UnLike" %>
-  <% end %>
+<% if  !current_user.liked?(post) %>
+  <%= render 'likes/form_unlike', object: current_user.like(post) %>
 <% else %>
-  <%= form_for(current_user.likes.build(post_id: post.id)) do |f| %>
-    <%= f.hidden_field :user_id %>
-    <%= f.hidden_field :post_id %>
-    <%= f.submit "Like" %>
-  <% end %>
+  <%= render 'likes/form_likes', object: post %>
 <% end %>
 
 <%= form_for(current_user.comments.build(post_id: post.id)) do |f|%>

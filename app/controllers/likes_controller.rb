@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     if current_user.likes.create(likes_params)

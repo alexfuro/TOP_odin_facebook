@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = current_user.feed
     @post  = current_user.posts.build
+    @like  = current_user.likes.build
   end
 
   def create
