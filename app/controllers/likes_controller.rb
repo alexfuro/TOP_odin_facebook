@@ -3,10 +3,10 @@ class LikesController < ApplicationController
 
   def create
     if current_user.likes.create(likes_params)
-      redirect_to posts_path
+      redirect_to request.referrer || posts_path
     else
       flash.now[:danger] = "Something went wrong"
-      render posts_path
+      redirect_to request.referrer || posts_path
     end
   end
 

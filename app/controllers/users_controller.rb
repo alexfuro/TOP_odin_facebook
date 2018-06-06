@@ -23,6 +23,8 @@ class UsersController < ApplicationController
   def show
     @user        =  User.find(params[:id])
     @are_friends =  friends?(current_user, @user)
+    @like        =  current_user.likes.build
+    @comment     =  current_user.comments.build
     if current_user.sent_request?(@user)
       @request = current_user.get_friend_request(@user)
     else

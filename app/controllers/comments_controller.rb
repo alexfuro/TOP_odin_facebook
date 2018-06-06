@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.create(comment_params)
     if @comment.save
       flash[:success] = "Comment created!"
-      redirect_to posts_path
+      redirect_to request.referrer || posts_path
     else
       flash[:danger] = "Something busted!"
-      render posts_path
+      redirect_to request.referrer || posts_path
     end
   end
 
