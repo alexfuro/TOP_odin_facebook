@@ -4,6 +4,9 @@ class FriendRequest < ApplicationRecord
   scope      :accepted, -> { where(accepted: true) }
   scope      :pending,  -> { where(accepted: nil) }
 
+  validates :requestor_id, presence: true
+  validates :requested_id, presence: true
+  
   def FriendRequest.friendships(user)
     where(requestor_id: user.id).accepted
   end
