@@ -3,10 +3,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = current_user.feed
+    @post  = current_user.posts.build
   end
 
   def create
-    if current_user.posts.create(post_params)
+    @post = current_user.posts.create(post_params)
+    if @post.save
       flash[:success] = "Post created successful"
       redirect_to posts_path
     else

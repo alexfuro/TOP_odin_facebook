@@ -1,5 +1,5 @@
-<%= form_for(current_user.posts.build) do |f| %>
-  <%= f.label :content %>
+<%= form_for(@post) do |f| %>
+  <%= f.label "New Post:" %>
   <%= f.text_area :content %>
 
   <%= f.submit "Create Post" %>
