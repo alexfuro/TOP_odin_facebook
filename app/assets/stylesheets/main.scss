@@ -86,8 +86,29 @@ footer {
   margin: 0 auto;
 }
 
-.post_form {
-    background-color: #EEEEEE;
+.new_post {
+  padding: 15px;
+  background-color: #EEEEEE;
+  box-shadow: 0 12px 15px -12px #424242;
+  label {
+    vertical-align: top;
+  }
+  textarea {
+    width: 81%;
+    font-size: 1.1em;
+    padding: 3px;
+    border: 1px solid #424242;
+  }
+  input {
+    padding: 8px;
+    float: right;
+    border: none;
+  }
+}
+.new_post:after {
+  content: "";
+  display: table;
+  clear: right;
 }
 footer {
   position: absolute;
