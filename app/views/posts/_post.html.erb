@@ -1,18 +1,19 @@
-<p>Post by: <%= link_to post.user.name, user_path(post.user.id) %><p>
-<p><%= post.content %></p>
-<p><%= pluralize(post.likes.count, "Like") %></p>
+<div class="post">
+  <p>Post by: <%= link_to post.user.name, user_path(post.user.id) %><p>
+  <p><%= post.content %></p>
+  <p><%= pluralize(post.likes.count, "Like") %></p>
 
-<% if  !current_user.liked?(post) %>
-  <%= render 'likes/form_unlike', object: current_user.like(post) %>
-<% else %>
-  <%= render 'likes/form_likes', object: post %>
-<% end %>
+  <% if  !current_user.liked?(post) %>
+    <%= render 'likes/form_unlike', object: current_user.like(post), class: "like" %>
+  <% else %>
+    <%= render 'likes/form_likes', object: post, class: "like" %>
+  <% end %>
 
-<%= render 'comments/form_comment', object: post %>
-<br>
-
-<p>Comments</p>
-<% post.comments.each do |comment| %>
-  <%= render 'comments/comment', object: comment %>
-<% end %>
-<br>
+  <div class="comments">
+    <p>Comments</p>
+    <% post.comments.each do |comment| %>
+      <%= render 'comments/comment', object: comment %>
+    <% end %>
+  </div>
+  <%= render 'comments/form_comment', object: post , class: "form_comment" %>
+</div>
