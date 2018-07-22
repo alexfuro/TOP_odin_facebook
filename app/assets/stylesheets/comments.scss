@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'colors';
 .comment {
+  color: $text_default;
   border: 1px solid $base_shadow;
   background-color: $base_light;
 }
