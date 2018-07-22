@@ -40,7 +40,15 @@ footer {
   width: 60%;
   height: 90vh;
   margin: 0 auto;
+  text-align: center;
+  font-size: 1.2em;
   background-color: #DDDDDD;
+  a {
+    margin-top: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
 }
 .landing-msg {
   width: 60%;
@@ -52,6 +60,19 @@ footer {
   box-shadow: 0 12px 15px -12px #424242;
   a {
     padding: 0 10px;
+    font-size: 1.2em;
+  }
+}
+.new_user {
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #EEEEEE;
+  text-align: center;
+  line-height: 3em;
+  box-shadow: 0 12px 15px -12px #424242;
+  input {
+    height: 1.3em;
     font-size: 1.2em;
   }
 }
