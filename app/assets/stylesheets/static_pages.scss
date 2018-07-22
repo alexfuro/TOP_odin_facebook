@@ -1,29 +1,41 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'colors';
 .landing-msg {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   padding: 60px 0;
-  background-color: #EEEEEE;
+  background-color: $base_light;
   text-align: center;
   line-height: 3em;
-  box-shadow: 0 12px 15px -12px #424242;
+  box-shadow: 0 30px 15px -12px $base_shadow;
   a {
     padding: 0 10px;
     font-size: 1.2em;
+    color: $text_default;
+  }
+  a:hover {
+    color: $base_color;
   }
 }
 .new_user {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   padding: 20px 0;
-  background-color: #EEEEEE;
+  background-color: $base_light;
   text-align: center;
   line-height: 3em;
-  box-shadow: 0 12px 15px -12px #424242;
+  box-shadow: 0 12px 15px -12px $base_shadow;
   input {
+    display: block;
+    margin: 5px auto;
+    padding: 5px;
     height: 1.3em;
     font-size: 1.2em;
+    background-color: $base_medium;
+  }
+  input:last-of-type {
+    margin-top: 15px;
   }
 }

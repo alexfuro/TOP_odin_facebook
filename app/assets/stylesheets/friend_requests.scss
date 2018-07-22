@@ -1,3 +1,12 @@
 // Place all the styles related to the FriendRequests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'colors';
+.edit_friend_request {
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px;
+  color: $text_light;
+  background-color: $base_color;
+  font-size: 1.2em;
+}
