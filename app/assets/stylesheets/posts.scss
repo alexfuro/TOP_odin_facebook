@@ -37,6 +37,9 @@
   margin: 25px 0;
   color: $text_light;
   box-shadow: 0 20px 15px -12px $base_shadow;
+  a:visited {
+    color: $text_light;
+  }
   p {
     text-align: left;
     padding: 3px 0;
