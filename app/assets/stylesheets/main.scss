@@ -41,6 +41,11 @@ footer {
     float: right;
   }
 }
+header:after {
+  content: "";
+  display: table;
+  clear: right;
+}
 .content {
   width: 60%;
   min-height: 87vh;
@@ -60,9 +65,42 @@ footer {
   position: absolute;
   bottom: 0;
 }
-
+.dropdown-btn {
+  display: none;
+  height: 33px;
+  width: 53px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border: none;
+  background-color: $base_light;
+  color: $text_default;
+  font-size: 1.02em;
+}
+.mobile-nav {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  right: 10px;
+  width: 220px;
+  background-color: $base_light;
+  a {
+    display: block;
+    padding-left: 10px;
+    color: $text_default;
+  }
+  a:hover {
+    background-color: $base_color;
+    color: $text_light;
+  }
+}
 @media only screen and (max-width: 600px) {
   .content {
     width: 100%
+  }
+  .dropdown-btn {
+    display: inline-block;
+  }
+  .navbar {
+    display: none;
   }
 }
