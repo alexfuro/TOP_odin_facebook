@@ -6,7 +6,7 @@
   width: 70%;
   margin: 0 auto;
   padding: 60px 0;
-  background-color: $base_light;
+  background-color: $base_highlight;
   text-align: center;
   line-height: 3em;
   box-shadow: 0 30px 15px -12px $base_shadow;
@@ -23,7 +23,7 @@
   width: 50%;
   margin: 0 auto;
   padding: 20px 0;
-  background-color: $base_light;
+  background-color: $base_highlight;
   text-align: center;
   line-height: 3em;
   box-shadow: 0 12px 15px -12px $base_shadow;
@@ -33,7 +33,9 @@
     padding: 5px;
     height: 1.3em;
     font-size: 1.2em;
-    background-color: $base_medium;
+    border: 1px solid $base_shadow;
+    background-color: $base_color;
+    color: $text_light;
   }
   input:last-of-type {
     margin-top: 15px;
