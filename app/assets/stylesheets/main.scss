@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 .container {
+  position: relative;
   min-height: 100vh;
+  padding-bottom: 43px;
 }
 header,
 footer {
@@ -34,20 +36,22 @@ footer {
   }
 }
 .content {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 60%;
-  height: 90vh;
+  min-height: 100vh;
+  padding: 25px 0;
   margin: 0 auto;
   text-align: center;
   font-size: 1.2em;
   background-color: #DDDDDD;
   a {
-    margin-top: 10px;
+    padding-top: 10px;
   }
   h2 {
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
 }
 .landing-msg {
