@@ -36,3 +36,9 @@ input {
   background-color: $base_light;
   font-size: .85em;
 }
+@media only screen and (max-width: 600px) {
+  .users,
+  .show_user {
+    width: 100%
+  }
+}

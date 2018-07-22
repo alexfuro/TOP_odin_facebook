@@ -90,3 +90,10 @@
   display: table;
   clear: right;
 }
+@media only screen and (max-width: 600px) {
+  .post,
+  .feed,
+  .post_form {
+    width: 100%
+  }
+}
