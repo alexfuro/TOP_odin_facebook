@@ -9,16 +9,18 @@
   </head>
 
   <body>
-    <header>
-      <%= render 'shared/header' %>
-    </header>
-    <div class="main_container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </div>
-    <footer>
-      <%= render 'shared/footer' %>
-    </footer>
+    <div class="container">
+      <header>
+        <%= render 'shared/header' %>
+      </header>
+      <div class="content">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+      <footer>
+        <%= render 'shared/footer' %>
+      </footer>
+  </div>
   </body>
 </html>
