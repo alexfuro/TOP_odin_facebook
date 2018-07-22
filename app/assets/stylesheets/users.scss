@@ -1,9 +1,11 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'colors';
 .users {
   width: 60%;
   margin: 0 auto;
+  color: $text_default;
   h1 {
     text-align: left;
   }
@@ -11,9 +13,15 @@
     list-style: none;
     text-align: left;
     min-height: 30px;
-    background-color: #EEEEEE;
-    border: 1px solid #424242;
+    background-color: $base_light;
+    border: 1px solid $base_shadow;
     padding: 5px 8px;;
+  }
+  a {
+    color: $text_default;
+  }
+  a:hover {
+    color: $base_color;
   }
 }
 .show_user {
@@ -25,5 +33,6 @@ input {
   border: none;
   min-width: 43px;
   min-width: 50px;
-  background-color: #EEEEEE;
+  background-color: $base_light;
+  font-size: .85em;
 }
