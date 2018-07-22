@@ -1,9 +1,11 @@
 //Variables
-$base_color: blue;
+$base_color: #d32f2f;
 $base_highlight: white;
+$base_light: #ffcdd2;
+$base_medium: #e57373;
 $base_shadow: #424242;
-$text_default: #424242;
-$text_light: #757575;
+$text_default: #212121;
+$text_light: #F5F5F5;
 
 //global styles
 * {
@@ -15,24 +17,26 @@ $text_light: #757575;
   position: relative;
   min-height: 100vh;
   padding-bottom: 43px;
+  background-color: $base_light;
 }
 header,
 footer {
   height: 43px;
   width: 100%;
-  padding: 0 10px;
   color: white;
-  background-color: blue;
+  background-color: $base_color;
   font-size: 1.2em;
   a {
     text-decoration: none;
-    color: white;
+    padding: 10px;
+    color: $text_light;
     line-height: 43px;
     font-weight: 600;
     vertical-align: bottom;
   }
   a:hover {
-    color: yellow;
+    color: $text_default;
+    background-color: $base_highlight;
   }
   p {
     display: inline-block;
@@ -50,7 +54,8 @@ footer {
   margin: 0 auto;
   text-align: center;
   font-size: 1.2em;
-  background-color: #DDDDDD;
+  color: $text_default;
+  background-color: $base_medium;
   a {
     padding-top: 10px;
   }
