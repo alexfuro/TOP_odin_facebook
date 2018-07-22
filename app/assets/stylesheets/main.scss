@@ -82,8 +82,12 @@ footer {
 }
 .feed,
 .post_form {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
+}
+
+.post_form {
+    background-color: #EEEEEE;
 }
 footer {
   position: absolute;

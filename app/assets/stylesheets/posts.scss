@@ -1,3 +1,41 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post {
+  background-color: #EEEEEE;
+  padding: 10px;
+  margin: 25px 0;
+  box-shadow: 0 12px 15px -12px #424242;
+  p {
+    text-align: left;
+    padding: 3px 0;
+  }
+  .new_like {
+    padding: 5px 0;
+    input {
+      float: left;
+      padding: 5px;
+    }
+  }
+  .comments {
+    clear: left;
+  }
+  .new_comment {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0;
+    justify-content: space-between;
+    textarea {
+      width: 70%;
+      font-size: 1.1em;
+      padding: 3px;
+    }
+    input {
+      width: 28%;
+    }
+  }
+  input {
+    border: none;
+  }
+}
