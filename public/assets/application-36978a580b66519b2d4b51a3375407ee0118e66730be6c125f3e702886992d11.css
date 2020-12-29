@@ -1,0 +1,402 @@
+/* line 5, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/comments.scss */
+.comment {
+  color: #212121;
+  border: 1px solid #424242;
+  background-color: #E8EAF6;
+}
+/* line 5, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/friend_requests.scss */
+.edit_friend_request {
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px;
+  color: #F5F5F5;
+  background-color: #3949AB;
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 14, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/friend_requests.scss */
+  .edit_friend_request {
+    width: 100%;
+  }
+}
+/* line 5, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 10, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 43px;
+  background-color: #E0E0E0;
+}
+
+/* line 16, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+header,
+footer {
+  height: 43px;
+  width: 100%;
+  color: white;
+  background-color: #3949AB;
+  font-size: 1.2em;
+}
+/* line 23, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+header a,
+footer a {
+  text-decoration: none;
+  padding: 10px;
+  color: #F5F5F5;
+  line-height: 43px;
+  font-weight: 600;
+  vertical-align: bottom;
+}
+/* line 31, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+header a:hover,
+footer a:hover {
+  color: #212121;
+  background-color: #F5F5F5;
+}
+/* line 35, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+header p,
+footer p {
+  display: inline-block;
+  line-height: 43px;
+  vertical-align: bottom;
+}
+/* line 40, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+header nav,
+footer nav {
+  float: right;
+}
+
+/* line 44, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+header:after {
+  content: "";
+  display: table;
+  clear: right;
+}
+
+/* line 49, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.content {
+  width: 60%;
+  min-height: 87vh;
+  padding: 25px 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2em;
+  color: #212121;
+}
+/* line 57, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.content a {
+  padding-top: 10px;
+}
+/* line 60, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.content h2 {
+  padding-bottom: 10px;
+}
+
+/* line 64, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 68, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.dropdown-btn {
+  display: none;
+  height: 33px;
+  width: 53px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border: none;
+  background-color: #E8EAF6;
+  color: #212121;
+  font-size: 1.02em;
+}
+
+/* line 79, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.mobile-nav {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  right: 10px;
+  width: 220px;
+  background-color: #E8EAF6;
+}
+/* line 86, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.mobile-nav a {
+  display: block;
+  padding-left: 10px;
+  color: #212121;
+}
+/* line 91, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+.mobile-nav a:hover {
+  background-color: #3949AB;
+  color: #F5F5F5;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 97, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+  .content {
+    width: 100%;
+  }
+
+  /* line 100, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+  .dropdown-btn {
+    display: inline-block;
+  }
+
+  /* line 103, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/main.scss */
+  .navbar {
+    display: none;
+  }
+}
+/* line 6, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.feed,
+.post_form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* line 14, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post textarea,
+.new_post textarea,
+.new_comment textarea {
+  font-size: 1.1em;
+  padding: 3px;
+  border: 1px solid #424242;
+  background-color: #E8EAF6;
+}
+/* line 20, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post input,
+.new_post input,
+.new_comment input {
+  min-height: 43px;
+  min-width: 50px;
+  border: none;
+  font-size: .85em;
+  background-color: #E8EAF6;
+  color: #212121;
+}
+/* line 28, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post input:hover,
+.new_post input:hover,
+.new_comment input:hover {
+  color: #212121;
+  background-color: #E0E0E0;
+  cursor: pointer;
+}
+
+/* line 34, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post {
+  background-color: #3949AB;
+  padding: 10px;
+  margin: 25px 0;
+  color: #F5F5F5;
+  box-shadow: 0 20px 15px -12px #424242;
+}
+/* line 40, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post a:visited {
+  color: #F5F5F5;
+}
+/* line 43, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post p {
+  text-align: left;
+  padding: 3px 0;
+}
+/* line 47, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post .new_like,
+.post .edit_like {
+  padding: 5px 0;
+}
+/* line 50, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post .new_like input,
+.post .edit_like input {
+  float: left;
+  padding: 5px;
+}
+/* line 55, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post .comments {
+  clear: left;
+}
+/* line 58, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post .new_comment {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 0;
+  justify-content: space-between;
+}
+/* line 64, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post .new_comment textarea {
+  width: 70%;
+}
+/* line 67, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.post .new_comment input {
+  width: 28%;
+}
+
+/* line 72, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.new_post {
+  padding: 15px;
+  background-color: #3949AB;
+  color: #F5F5F5;
+  box-shadow: 0 18px 15px -12px #424242;
+}
+/* line 77, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.new_post label {
+  vertical-align: top;
+}
+/* line 80, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.new_post textarea {
+  width: 81%;
+}
+/* line 83, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.new_post input {
+  padding: 8px;
+  float: right;
+}
+
+/* line 88, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+.new_post:after {
+  content: "";
+  display: table;
+  clear: right;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 94, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/posts.scss */
+  .post,
+  .feed,
+  .post_form {
+    width: 100%;
+  }
+}
+/* line 5, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/static_pages.scss */
+.landing-msg {
+  width: 70%;
+  margin: 0 auto;
+  padding: 60px 0;
+  background-color: #F5F5F5;
+  text-align: center;
+  line-height: 3em;
+  box-shadow: 0 30px 15px -12px #424242;
+}
+/* line 13, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/static_pages.scss */
+.landing-msg a {
+  padding: 0 10px;
+  font-size: 1.2em;
+  color: #212121;
+}
+/* line 18, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/static_pages.scss */
+.landing-msg a:hover {
+  color: #3949AB;
+}
+
+/* line 22, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/static_pages.scss */
+.new_user {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #F5F5F5;
+  text-align: center;
+  line-height: 3em;
+  box-shadow: 0 12px 15px -12px #424242;
+}
+/* line 30, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/static_pages.scss */
+.new_user input {
+  display: block;
+  margin: 5px auto;
+  padding: 5px;
+  height: 1.3em;
+  font-size: 1.2em;
+  border: 1px solid #424242;
+  background-color: #3949AB;
+  color: #F5F5F5;
+}
+/* line 40, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/static_pages.scss */
+.new_user input:last-of-type {
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 45, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/static_pages.scss */
+  .landing-msg,
+  .new_user {
+    width: 100%;
+  }
+}
+/* line 5, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+.users {
+  width: 60%;
+  margin: 0 auto;
+  color: #212121;
+}
+/* line 9, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+.users h1 {
+  text-align: left;
+}
+/* line 12, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+.users li {
+  list-style: none;
+  text-align: left;
+  min-height: 30px;
+  background-color: #E8EAF6;
+  border: 1px solid #424242;
+  padding: 5px 8px;
+}
+/* line 20, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+.users a {
+  color: #212121;
+}
+/* line 23, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+.users a:hover {
+  color: #3949AB;
+}
+
+/* line 27, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+.show_user {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* line 31, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+input {
+  padding: 8px;
+  border: none;
+  min-width: 43px;
+  min-width: 50px;
+  background-color: #E8EAF6;
+  font-size: .85em;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 40, /mnt/c/Users/alexa/Documents/Projects/TOP_odin_facebook/app/assets/stylesheets/users.scss */
+  .users,
+  .show_user {
+    width: 100%;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+ .show {
+   display: block;
+ }
