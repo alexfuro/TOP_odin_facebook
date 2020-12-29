@@ -1,10 +1,3 @@
 Rails.application.routes.draw do
-  get 'users/sign_up', to: redirect('users/new')
-  devise_for :users
-  resources  :users
-  resources  :friend_requests, only: [:index, :create, :update, :destroy]
-  resources  :posts,           only: [:index, :create]
-  resources  :likes,           only: [:create, :destroy]
-  resources  :comments,        only: [:create]
-  root 'static_pages#index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
